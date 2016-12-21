@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Stack View Sample App.xcscheme</key>
+		<key>SimpleTable.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,17 +12,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>E74E776F1E0A4C7200F72ADE</key>
+		<key>E74E77A91E0ACADF00F72ADE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E74E77831E0A4C7300F72ADE</key>
+		<key>E74E77BD1E0ACADF00F72ADE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E74E778E1E0A4C7300F72ADE</key>
+		<key>E74E77C81E0ACADF00F72ADE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

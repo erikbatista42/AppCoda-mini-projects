@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E74E776F1E0A4C7200F72ADE"
-               BuildableName = "Stack View Sample App.app"
-               BlueprintName = "Stack View Sample App"
-               ReferencedContainer = "container:Stack View Sample App.xcodeproj">
+               BlueprintIdentifier = "E74E77A91E0ACADF00F72ADE"
+               BuildableName = "SimpleTable.app"
+               BlueprintName = "SimpleTable"
+               ReferencedContainer = "container:SimpleTable.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,30 +32,30 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E74E77831E0A4C7300F72ADE"
-               BuildableName = "Stack View Sample AppTests.xctest"
-               BlueprintName = "Stack View Sample AppTests"
-               ReferencedContainer = "container:Stack View Sample App.xcodeproj">
+               BlueprintIdentifier = "E74E77BD1E0ACADF00F72ADE"
+               BuildableName = "SimpleTableTests.xctest"
+               BlueprintName = "SimpleTableTests"
+               ReferencedContainer = "container:SimpleTable.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E74E778E1E0A4C7300F72ADE"
-               BuildableName = "Stack View Sample AppUITests.xctest"
-               BlueprintName = "Stack View Sample AppUITests"
-               ReferencedContainer = "container:Stack View Sample App.xcodeproj">
+               BlueprintIdentifier = "E74E77C81E0ACADF00F72ADE"
+               BuildableName = "SimpleTableUITests.xctest"
+               BlueprintName = "SimpleTableUITests"
+               ReferencedContainer = "container:SimpleTable.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E74E776F1E0A4C7200F72ADE"
-            BuildableName = "Stack View Sample App.app"
-            BlueprintName = "Stack View Sample App"
-            ReferencedContainer = "container:Stack View Sample App.xcodeproj">
+            BlueprintIdentifier = "E74E77A91E0ACADF00F72ADE"
+            BuildableName = "SimpleTable.app"
+            BlueprintName = "SimpleTable"
+            ReferencedContainer = "container:SimpleTable.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -75,10 +75,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E74E776F1E0A4C7200F72ADE"
-            BuildableName = "Stack View Sample App.app"
-            BlueprintName = "Stack View Sample App"
-            ReferencedContainer = "container:Stack View Sample App.xcodeproj">
+            BlueprintIdentifier = "E74E77A91E0ACADF00F72ADE"
+            BuildableName = "SimpleTable.app"
+            BlueprintName = "SimpleTable"
+            ReferencedContainer = "container:SimpleTable.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,10 +94,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E74E776F1E0A4C7200F72ADE"
-            BuildableName = "Stack View Sample App.app"
-            BlueprintName = "Stack View Sample App"
-            ReferencedContainer = "container:Stack View Sample App.xcodeproj">
+            BlueprintIdentifier = "E74E77A91E0ACADF00F72ADE"
+            BuildableName = "SimpleTable.app"
+            BlueprintName = "SimpleTable"
+            ReferencedContainer = "container:SimpleTable.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

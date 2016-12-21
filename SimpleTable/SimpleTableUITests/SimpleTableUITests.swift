@@ -1,6 +1,6 @@
 //
-//  Stack_View_Sample_AppUITests.swift
-//  Stack View Sample AppUITests
+//  SimpleTableUITests.swift
+//  SimpleTableUITests
 //
 //  Created by Erik Batista on 12/21/16.
 //  Copyright © 2016 swiftlang.eu. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class Stack_View_Sample_AppUITests: XCTestCase {
+class SimpleTableUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()
