@@ -10,7 +10,10 @@ import UIKit
 
 class RestaurantTableViewController: UITableViewController {
     
+    var restaurantIsNotVisited = Array(repeating: false, count: 21)
+    
     var restaurantIsVisited = Array(repeating: false, count: 21)
+    
     
     var restaurantNames = ["Cafe Deadend", "Homei", "Teakha", "Cafe Loisl", "Petite Oyster", "For Kee Restaurant", "Po's Atelier", "Bourke Street Bakery", "Haigh's Chocolate", "Palomino Espresso", "Upstate", "Traif", "Graham Avenue Meats", "Waffle & Wolf", "Five Leaves", "Cafe Lore", "Confessional", "Barrafina", "Donostia", "Royal Oak", "CASK Pub and Kitchen"]
     
@@ -52,9 +55,18 @@ class RestaurantTableViewController: UITableViewController {
             self.restaurantIsVisited[indexPath.row] = true
         })
         
-        
+        let undoCheckInAction = UIAlertAction(title: "Undo Check in", style: .default) {
+            (action: UIAlertAction!) -> Void in
+            
+            let cell = tableView.cellForRow(at: indexPath)
+            cell?.accessoryType = .none
+            self.restaurantIsNotVisited[indexPath.row] = true
+            
+        }
             
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        optionMenu.addAction(undoCheckInAction)
         
         optionMenu.addAction(checkInAction)
         
@@ -82,7 +94,7 @@ class RestaurantTableViewController: UITableViewController {
         
         //Configure the cell...
         
-                        //Make cell circular
+                        //Make cell image circular
         cell.thumbnailImageView.layer.cornerRadius = 30.0
         cell.thumbnailImageView.clipsToBounds = true
         
@@ -91,10 +103,18 @@ class RestaurantTableViewController: UITableViewController {
         cell.locationLabel.text = restaurantLocations[indexPath.row]
         cell.typeLabel.text = restaurantTypes[indexPath.row]
         
+        
+                        //Checkmark-in
         if restaurantIsVisited[indexPath.row] {
             cell.accessoryType = .checkmark
         } else {
             cell.accessoryType = .none
+        }
+                        //Checkmark-out
+        if restaurantIsNotVisited[indexPath.row] {
+            cell.accessoryType = .none
+        } else {
+            cell.accessoryType = .checkmark
         }
         
         return cell
