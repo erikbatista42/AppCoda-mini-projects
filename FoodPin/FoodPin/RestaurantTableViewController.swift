@@ -22,6 +22,29 @@ class RestaurantTableViewController: UITableViewController {
     var restaurantLocations = ["Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Sydney", "Sydney", "Sydney", "New York", "New York", "New York", "New York", "New York", "New York", "New York", "London", "London", "London", "London"]
     
     var restaurantTypes = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian / Causual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "American / Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", "British", "Thai"]
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            restaurantNames.remove(at: indexPath.row)
+            restaurantLocations.remove(at: indexPath.row)
+            restaurantTypes.remove(at: indexPath.row)
+            restaurantIsVisited.remove(at: indexPath.row)
+            restaurantImages.remove(at: indexPath.row)
+        }
+        
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        
+        print("Total item: \(restaurantNames.count)")
+        for name in restaurantNames {
+            print(name)
+        }
+    }
+        
+        
+        
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +60,9 @@ class RestaurantTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+
+    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //create an option menu as an action sheet
@@ -65,10 +91,11 @@ class RestaurantTableViewController: UITableViewController {
         }
             
         tableView.deselectRow(at: indexPath, animated: true)
-        
+            //Options in menu
         optionMenu.addAction(undoCheckInAction)
         
         optionMenu.addAction(checkInAction)
+            //----
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         optionMenu.addAction(cancelAction)
@@ -84,9 +111,15 @@ class RestaurantTableViewController: UITableViewController {
         
         //Display the menu
         present(optionMenu, animated: true, completion: nil)
+        
     }
     
+
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        
         
         let cellIdentifier = "Cell"
         
@@ -117,8 +150,10 @@ class RestaurantTableViewController: UITableViewController {
             cell.accessoryType = .checkmark
         }
         
+        
         return cell
     }
+    
     
     
     
@@ -135,7 +170,9 @@ class RestaurantTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return restaurantNames.count
     }
-
+    
+   
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
