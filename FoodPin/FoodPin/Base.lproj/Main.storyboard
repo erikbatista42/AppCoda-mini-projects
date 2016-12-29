@@ -74,7 +74,7 @@
                                     <outlet property="nameLabel" destination="Bfq-zB-fAt" id="0LL-ds-Lns"/>
                                     <outlet property="thumbnailImageView" destination="vTo-rn-rgl" id="S6K-ve-ncf"/>
                                     <outlet property="typeLabel" destination="q7s-9L-OGk" id="K6i-9t-f7C"/>
-                                    <segue destination="6s2-0W-MO6" kind="show" id="lgc-Je-ZZY"/>
+                                    <segue destination="6s2-0W-MO6" kind="show" identifier="showRestaurantDetail" id="lgc-Je-ZZY"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -113,6 +113,9 @@
                             <constraint firstItem="syV-4O-qTH" firstAttribute="leading" secondItem="m5m-J5-7uo" secondAttribute="leading" id="cif-Y7-wHM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="restaurantImageView" destination="syV-4O-qTH" id="Uu0-ya-VcY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihH-1i-kXU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

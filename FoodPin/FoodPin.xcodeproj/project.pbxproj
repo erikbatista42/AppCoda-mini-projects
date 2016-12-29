@@ -103,8 +103,8 @@
 			children = (
 				E74E77E71E0B851C00F72ADE /* AppDelegate.swift */,
 				E770B3251E10452A00FFB431 /* RestaurantTableViewController.swift */,
-				E780987C1E11863D0029E1FF /* RestaurantTableViewCell.swift */,
 				E7E495B61E15C4D800F840B5 /* RestaurantDetailViewController.swift */,
+				E780987C1E11863D0029E1FF /* RestaurantTableViewCell.swift */,
 				E74E77EB1E0B851C00F72ADE /* Main.storyboard */,
 				E74E77EE1E0B851C00F72ADE /* Assets.xcassets */,
 				E74E77F01E0B851C00F72ADE /* LaunchScreen.storyboard */,
