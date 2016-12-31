@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -92,7 +93,6 @@
         <!--Restaurant Detail View Controller-->
         <scene sceneID="jEB-kA-fiN">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ihH-1i-kXU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="6s2-0W-MO6" customClass="RestaurantDetailViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MX6-qQ-8tX"/>
@@ -110,13 +110,44 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="36" id="Hbt-8q-u1P">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="36" id="Hbt-8q-u1P" customClass="RestaurantDetailTableViewCell" customModule="FoodPin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="328" width="375" height="36"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hbt-8q-u1P" id="eB5-OL-aHF">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="35.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bOh-fY-i1l">
+                                                    <rect key="frame" x="26" y="0.0" width="341" height="21"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Field" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ET-hF-4gn">
+                                                            <rect key="frame" x="0.0" y="0.0" width="113.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Lo-Uw-TKy">
+                                                            <rect key="frame" x="113.5" y="0.0" width="227.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="4ET-hF-4gn" firstAttribute="width" secondItem="2Lo-Uw-TKy" secondAttribute="width" multiplier="0.5" id="cAH-Wo-NBw"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="bOh-fY-i1l" secondAttribute="trailing" id="EoG-01-bOK"/>
+                                                <constraint firstItem="bOh-fY-i1l" firstAttribute="leading" secondItem="eB5-OL-aHF" secondAttribute="leadingMargin" constant="18" id="qAe-K0-45C"/>
+                                                <constraint firstItem="bOh-fY-i1l" firstAttribute="centerY" secondItem="eB5-OL-aHF" secondAttribute="centerY" id="w6Z-WA-Uah"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="fieldLabel" destination="4ET-hF-4gn" id="vJa-yE-x9D"/>
+                                            <outlet property="valueLabel" destination="2Lo-Uw-TKy" id="iSs-RN-BkZ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -133,6 +164,7 @@
                         <outlet property="restaurantImageView" destination="eXj-vR-tlx" id="3kv-5h-5mo"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ihH-1i-kXU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1098.4000000000001" y="42.728635682158924"/>
         </scene>
