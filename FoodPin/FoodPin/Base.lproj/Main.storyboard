@@ -150,6 +150,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="6s2-0W-MO6" id="eUA-07-X9I"/>
+                                    <outlet property="delegate" destination="6s2-0W-MO6" id="Tzv-JV-ude"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
