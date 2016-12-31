@@ -98,6 +98,13 @@ class RestaurantTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        tableView.backgroundColor = UIColor(red: 107.0/255.0, green: 185.0/255.0, blue: 240.0/255.0, alpha: 0.2)
+        
+        
+        
+                //Table view seperator color
+        tableView.separatorColor = UIColor(red: 30.0/255.0, green: 139.0/255.0, blue: 195.0/255.0, alpha: 0.8)
     }
 
     override func didReceiveMemoryWarning() {
@@ -179,7 +186,7 @@ class RestaurantTableViewController: UITableViewController {
 //        cell.imageView?.clipsToBounds = true
         
         cell.accessoryType = restaurants[indexPath.row].isVisited ? .checkmark : .none
-        
+        cell.backgroundColor = UIColor.clear
         
                         //Checkmark-in
 //        if editingStyle == .delete {

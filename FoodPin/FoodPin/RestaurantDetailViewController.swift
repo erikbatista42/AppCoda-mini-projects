@@ -21,6 +21,8 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     
     @IBOutlet weak var restaurantLocationLabel: UILabel!
         var restaurantLocations = Restaurant!.self
+    
+    @IBOutlet var tableView:UITableView!
 
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -30,6 +32,9 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
 //            restaurantNameLabel.text = restaurant.name
 //            restaurantTypeLabel.text = restaurant.type
 //            restaurantLocationLabel.text = restaurant.location
+             tableView.separatorColor = UIColor.white
+            
+            
         }
 
     override func didReceiveMemoryWarning() {
@@ -50,13 +55,13 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             cell.fieldLabel.text = "name"
             cell.valueLabel.text = restaurant.name
         case 1:
-            cell.fieldLabel.text = "Type"
+            cell.fieldLabel.text = "Type:"
             cell.valueLabel.text = restaurant.type
         case 2:
-            cell.fieldLabel.text = "Location"
+            cell.fieldLabel.text = "Location:"
             cell.valueLabel.text = restaurant.location
         case 3:
-            cell.fieldLabel.text = "Been here"
+            cell.fieldLabel.text = "Been here:"
             cell.valueLabel.text = (restaurant.isVisited) ?"Yes, I've been here before": "No"
         default:
             cell.fieldLabel.text = ""
