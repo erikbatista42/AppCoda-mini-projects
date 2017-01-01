@@ -59,6 +59,9 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="DGA-Wl-SQv" firstAttribute="top" secondItem="Bfq-zB-fAt" secondAttribute="bottom" constant="1" id="0YU-LT-K4Q"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                         </stackView>
