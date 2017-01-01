@@ -116,7 +116,9 @@ class RestaurantTableViewController: UITableViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
             //Disable the navigation bar on swipe
         navigationController?.hidesBarsOnSwipe = true
-       
+        
+        tableView.estimatedRowHeight = 36.0
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
 
     override func didReceiveMemoryWarning() {
