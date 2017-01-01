@@ -35,7 +35,13 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
              tableView.separatorColor = UIColor.white
             
             
-        }
+//            UINavigationBar.appearance().barTintColor = UIColor.red
+//       
+//            if let barFont = UIFont(name: "Avenir-Light", size: 24.0) {
+//                UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.red, NSFontAttributeName: barFont]
+//            }
+            title = restaurant.name
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

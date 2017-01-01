@@ -99,12 +99,20 @@ class RestaurantTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+                //Table View background color
         tableView.backgroundColor = UIColor(red: 107.0/255.0, green: 185.0/255.0, blue: 240.0/255.0, alpha: 0.2)
-        
         
         
                 //Table view seperator color
         tableView.separatorColor = UIColor(red: 30.0/255.0, green: 139.0/255.0, blue: 195.0/255.0, alpha: 0.8)
+        
+                //NavigationBar background color, text font, and font size
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 30.0/255.0, green: 139.0/255.0, blue: 195.0/255.0, alpha: 0.8)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white,NSFontAttributeName: UIFont(name: "Avenir", size: 21)!]
+        
+        // Remove the title of the back button
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+       
     }
 
     override func didReceiveMemoryWarning() {
