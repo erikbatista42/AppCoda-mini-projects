@@ -118,7 +118,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="35.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bOh-fY-i1l">
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOh-fY-i1l">
                                                     <rect key="frame" x="26" y="0.0" width="341" height="21"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Field" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ET-hF-4gn">
@@ -142,7 +142,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="bOh-fY-i1l" secondAttribute="trailing" id="EoG-01-bOK"/>
                                                 <constraint firstItem="bOh-fY-i1l" firstAttribute="leading" secondItem="eB5-OL-aHF" secondAttribute="leadingMargin" constant="18" id="qAe-K0-45C"/>
-                                                <constraint firstItem="bOh-fY-i1l" firstAttribute="centerY" secondItem="eB5-OL-aHF" secondAttribute="centerY" id="w6Z-WA-Uah"/>
+                                                <constraint firstItem="bOh-fY-i1l" firstAttribute="centerY" secondItem="eB5-OL-aHF" secondAttribute="centerY" constant="-7.25" id="w6Z-WA-Uah"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
