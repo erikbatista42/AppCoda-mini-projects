@@ -10,6 +10,7 @@ import UIKit
 
 class RestaurantTableViewController: UITableViewController {
     
+    
     var restaurantIsNotVisited = Array(repeating: false, count: 21)
     
     var restaurantIsVisited = Array(repeating: false, count: 21)
@@ -41,6 +42,7 @@ class RestaurantTableViewController: UITableViewController {
         Restaurant(name: "CASK Pub and Kitchen", type: "Thai", location: "London", image: "caskpubkitchen.jpg", isVisited: false)
     ]
   ///////
+    
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         // Social Sharing Button
@@ -112,6 +114,8 @@ class RestaurantTableViewController: UITableViewController {
         
         // Remove the title of the back button
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+            //Disable the navigation bar on swipe
+        navigationController?.hidesBarsOnSwipe = true
        
     }
 
@@ -119,8 +123,14 @@ class RestaurantTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+  
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.hidesBarsOnSwipe = true
+        
+    }
     
                     //Action Menu
 //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

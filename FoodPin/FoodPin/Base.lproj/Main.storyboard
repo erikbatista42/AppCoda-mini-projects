@@ -85,6 +85,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Food Pin" id="ENh-wP-0YH"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9w0-Q1-OmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -164,6 +165,7 @@
                             <constraint firstItem="eWG-U6-Hsu" firstAttribute="leading" secondItem="m5m-J5-7uo" secondAttribute="leading" id="rXX-m5-ZLv"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="restaurantImageView" destination="eXj-vR-tlx" id="3kv-5h-5mo"/>
                         <outlet property="tableView" destination="eWG-U6-Hsu" id="mms-TK-MN0"/>
@@ -176,8 +178,9 @@
         <!--Navigation Controller-->
         <scene sceneID="04X-aS-8Ds">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3ry-w8-TOp" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="3ry-w8-TOp" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HO3-z1-llD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

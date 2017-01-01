@@ -40,6 +40,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
 //            if let barFont = UIFont(name: "Avenir-Light", size: 24.0) {
 //                UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.red, NSFontAttributeName: barFont]
 //            }
+            
             title = restaurant.name
     }
 
