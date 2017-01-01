@@ -42,6 +42,9 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
 //            }
             
             title = restaurant.name
+            
+            tableView.estimatedRowHeight = 36.0
+            tableView.rowHeight = UITableViewAutomaticDimension
     }
 
     override func didReceiveMemoryWarning() {
