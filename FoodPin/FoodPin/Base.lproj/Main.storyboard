@@ -264,14 +264,23 @@
                                     <constraint firstAttribute="trailing" secondItem="axj-Uz-Y4t" secondAttribute="trailing" id="l7g-G4-rbj"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xni-qM-zfr">
+                                <rect key="frame" x="306" y="31" width="24" height="24"/>
+                                <state key="normal" image="cross"/>
+                                <connections>
+                                    <segue destination="yCO-ZM-4OZ" kind="unwind" unwindAction="closeWithSegue:" id="rqi-6Q-HeP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4C1-sl-m0Q" firstAttribute="bottom" secondItem="AKu-RG-DKi" secondAttribute="top" id="5qC-2g-Ug6"/>
                             <constraint firstAttribute="trailing" secondItem="4C1-sl-m0Q" secondAttribute="trailing" id="6CM-JI-lbS"/>
+                            <constraint firstItem="xni-qM-zfr" firstAttribute="top" secondItem="37T-MG-ppz" secondAttribute="bottom" constant="11" id="AKn-la-Zxb"/>
                             <constraint firstItem="AKu-RG-DKi" firstAttribute="top" secondItem="Coo-Qe-2hi" secondAttribute="bottom" constant="207" id="GBo-dj-nsQ"/>
                             <constraint firstItem="Coo-Qe-2hi" firstAttribute="top" secondItem="37T-MG-ppz" secondAttribute="bottom" constant="20" id="Qdr-gw-afo"/>
                             <constraint firstItem="4C1-sl-m0Q" firstAttribute="leading" secondItem="6hr-sE-sXd" secondAttribute="leading" id="U2g-lU-q8z"/>
+                            <constraint firstAttribute="trailing" secondItem="xni-qM-zfr" secondAttribute="trailing" constant="45" id="eyX-cu-hQy"/>
                             <constraint firstItem="Coo-Qe-2hi" firstAttribute="leading" secondItem="6hr-sE-sXd" secondAttribute="leadingMargin" constant="37" id="kY9-wn-COv"/>
                             <constraint firstItem="4C1-sl-m0Q" firstAttribute="top" secondItem="6hr-sE-sXd" secondAttribute="top" id="unK-jv-lhD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Coo-Qe-2hi" secondAttribute="trailing" constant="37" id="wB1-eB-jMs"/>
@@ -279,6 +288,7 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="opT-2e-Fm5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="yCO-ZM-4OZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1749.5999999999999" y="42.728635682158924"/>
         </scene>
@@ -306,5 +316,6 @@
         <image name="barrafina" width="480" height="480"/>
         <image name="cafeloisl" width="480" height="480"/>
         <image name="check" width="28" height="28"/>
+        <image name="cross" width="24" height="24"/>
     </resources>
 </document>

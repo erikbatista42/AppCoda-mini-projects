@@ -23,6 +23,10 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         var restaurantLocations = Restaurant!.self
     
     @IBOutlet var tableView:UITableView!
+    
+    @IBAction func close(segue: UIStoryboardSegue) {
+        
+    }
 
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -51,6 +55,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 6
