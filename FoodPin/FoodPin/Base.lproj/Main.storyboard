@@ -190,10 +190,10 @@
             </objects>
             <point key="canvasLocation" x="1098.4000000000001" y="42.728635682158924"/>
         </scene>
-        <!--View Controller-->
+        <!--Review View Controller-->
         <scene sceneID="r9Q-0W-3Bs">
             <objects>
-                <viewController id="hig-Nn-zpf" sceneMemberID="viewController">
+                <viewController id="hig-Nn-zpf" customClass="ReviewViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="37T-MG-ppz"/>
                         <viewControllerLayoutGuide type="bottom" id="AKu-RG-DKi"/>
@@ -286,11 +286,14 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Coo-Qe-2hi" secondAttribute="trailing" constant="37" id="wB1-eB-jMs"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="4C1-sl-m0Q" id="msb-2x-fXF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="opT-2e-Fm5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="yCO-ZM-4OZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1749.5999999999999" y="42.728635682158924"/>
+            <point key="canvasLocation" x="1807" y="43"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="04X-aS-8Ds">
