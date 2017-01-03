@@ -208,7 +208,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Coo-Qe-2hi">
                                 <rect key="frame" x="53" y="40" width="269" height="420"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barrafina" translatesAutoresizingMaskIntoConstraints="NO" id="axj-Uz-Y4t">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barrafina" translatesAutoresizingMaskIntoConstraints="NO" id="axj-Uz-Y4t" userLabel="Restaurant Image View">
                                         <rect key="frame" x="0.0" y="0.0" width="269" height="205"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="205" id="6ET-7X-JSY"/>
@@ -299,12 +299,13 @@
                     <connections>
                         <outlet property="backgroundImageView" destination="4C1-sl-m0Q" id="msb-2x-fXF"/>
                         <outlet property="containerView" destination="Coo-Qe-2hi" id="A0L-32-CQo"/>
+                        <outlet property="restaurantImageView" destination="axj-Uz-Y4t" id="oil-qj-oCE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="opT-2e-Fm5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="yCO-ZM-4OZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1805.5999999999999" y="42.728635682158924"/>
+            <point key="canvasLocation" x="1839" y="43"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="04X-aS-8Ds">

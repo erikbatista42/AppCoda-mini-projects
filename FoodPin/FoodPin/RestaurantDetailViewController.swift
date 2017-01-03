@@ -48,6 +48,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             
             // Do any additional setup after loading the view.
             restaurantImageView.image = UIImage(named: restaurant.image)
+            
              tableView.separatorColor = UIColor.white
             
             title = restaurant.name
@@ -93,6 +94,13 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         
         return cell
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showReview" {
+            let destinationController = segue.destination as! ReviewViewController
+            destinationController.restaurant = restaurant
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
