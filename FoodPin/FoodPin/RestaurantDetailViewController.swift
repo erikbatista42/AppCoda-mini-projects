@@ -48,17 +48,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             
             // Do any additional setup after loading the view.
             restaurantImageView.image = UIImage(named: restaurant.image)
-//            restaurantNameLabel.text = restaurant.name
-//            restaurantTypeLabel.text = restaurant.type
-//            restaurantLocationLabel.text = restaurant.location
              tableView.separatorColor = UIColor.white
-            
-            
-//            UINavigationBar.appearance().barTintColor = UIColor.red
-//       
-//            if let barFont = UIFont(name: "Avenir-Light", size: 24.0) {
-//                UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.red, NSFontAttributeName: barFont]
-//            }
             
             title = restaurant.name
             
