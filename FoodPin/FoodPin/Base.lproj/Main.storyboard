@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gvb-MI-QYC" id="5Cp-de-T8v">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yKG-aG-fsb">
@@ -118,7 +118,7 @@
                                         <rect key="frame" x="0.0" y="328" width="375" height="36"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hbt-8q-u1P" id="eB5-OL-aHF">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="35.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOh-fY-i1l">
@@ -209,14 +209,14 @@
                                 <rect key="frame" x="53" y="40" width="269" height="420"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barrafina" translatesAutoresizingMaskIntoConstraints="NO" id="axj-Uz-Y4t">
-                                        <rect key="frame" x="0.0" y="0.0" width="269" height="183"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="269" height="205"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="183" id="6ET-7X-JSY"/>
+                                            <constraint firstAttribute="height" constant="205" id="6ET-7X-JSY"/>
                                             <constraint firstAttribute="width" constant="269" id="FXU-aY-i2D"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You've dined here. What do you think?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e81-Qt-oq2">
-                                        <rect key="frame" x="0.0" y="191" width="269" height="71"/>
+                                        <rect key="frame" x="0.0" y="222" width="269" height="71"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="71" id="csy-Qz-RNv"/>
                                         </constraints>
@@ -225,28 +225,37 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Q3h-YD-VxW">
-                                        <rect key="frame" x="70" y="270" width="128" height="106"/>
+                                        <rect key="frame" x="8" y="293" width="253" height="106"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVu-MH-u5d">
-                                                <rect key="frame" x="0.0" y="0.0" width="128" height="32"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="253" height="32"/>
                                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="tintColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Absolutely love it!"/>
+                                                <connections>
+                                                    <segue destination="yCO-ZM-4OZ" kind="unwind" identifier="great" unwindAction="ratingButtonTappedWithSegue:" id="ZQs-Mf-qHo"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Du-Mj-yuV">
-                                                <rect key="frame" x="0.0" y="37" width="128" height="32"/>
+                                                <rect key="frame" x="0.0" y="37" width="253" height="32"/>
                                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="tintColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Good"/>
+                                                <connections>
+                                                    <segue destination="yCO-ZM-4OZ" kind="unwind" identifier="good" unwindAction="ratingButtonTappedWithSegue:" id="MFO-JD-ez5"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5u-mn-uDJ">
-                                                <rect key="frame" x="0.0" y="74" width="128" height="32"/>
+                                                <rect key="frame" x="0.0" y="74" width="253" height="32"/>
                                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="tintColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="I don't like it"/>
+                                                <connections>
+                                                    <segue destination="yCO-ZM-4OZ" kind="unwind" identifier="dislike" unwindAction="ratingButtonTappedWithSegue:" id="xhM-Iy-pol"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -254,14 +263,15 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="axj-Uz-Y4t" firstAttribute="top" secondItem="Coo-Qe-2hi" secondAttribute="top" id="189-Vt-Bkn"/>
-                                    <constraint firstItem="e81-Qt-oq2" firstAttribute="top" secondItem="axj-Uz-Y4t" secondAttribute="bottom" constant="8" id="CKr-dW-3mv"/>
+                                    <constraint firstItem="e81-Qt-oq2" firstAttribute="top" secondItem="axj-Uz-Y4t" secondAttribute="bottom" constant="17" id="CKr-dW-3mv"/>
+                                    <constraint firstItem="Q3h-YD-VxW" firstAttribute="top" secondItem="e81-Qt-oq2" secondAttribute="bottom" id="TbB-5l-db7"/>
                                     <constraint firstAttribute="trailing" secondItem="e81-Qt-oq2" secondAttribute="trailing" id="Znj-1k-0J4"/>
                                     <constraint firstItem="axj-Uz-Y4t" firstAttribute="leading" secondItem="Coo-Qe-2hi" secondAttribute="leading" id="aV1-sa-KkQ"/>
                                     <constraint firstItem="e81-Qt-oq2" firstAttribute="leading" secondItem="Coo-Qe-2hi" secondAttribute="leading" id="bk5-DZ-Vid"/>
-                                    <constraint firstItem="Q3h-YD-VxW" firstAttribute="top" secondItem="e81-Qt-oq2" secondAttribute="bottom" constant="8" symbolic="YES" id="d2W-VT-0hh"/>
                                     <constraint firstAttribute="height" constant="420" id="e1u-1b-bbW"/>
-                                    <constraint firstItem="Q3h-YD-VxW" firstAttribute="centerX" secondItem="Coo-Qe-2hi" secondAttribute="centerX" id="kkZ-AY-9vT"/>
                                     <constraint firstAttribute="trailing" secondItem="axj-Uz-Y4t" secondAttribute="trailing" id="l7g-G4-rbj"/>
+                                    <constraint firstItem="Q3h-YD-VxW" firstAttribute="leading" secondItem="Coo-Qe-2hi" secondAttribute="leadingMargin" id="nSd-FM-XKj"/>
+                                    <constraint firstItem="Q3h-YD-VxW" firstAttribute="centerX" secondItem="e81-Qt-oq2" secondAttribute="centerX" id="zu4-vA-OYa"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xni-qM-zfr">
@@ -294,7 +304,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="opT-2e-Fm5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="yCO-ZM-4OZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1807" y="43"/>
+            <point key="canvasLocation" x="1805.5999999999999" y="42.728635682158924"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="04X-aS-8Ds">

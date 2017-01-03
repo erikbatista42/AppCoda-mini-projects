@@ -24,8 +24,23 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     
     @IBOutlet var tableView:UITableView!
     
+    
     @IBAction func close(segue: UIStoryboardSegue) {
         
+    }
+    
+    @IBAction func ratingButtonTapped(segue: UIStoryboardSegue) {
+        if let rating = segue.identifier {
+            restaurant.isVisited = true
+            
+            switch rating {
+            case "great": restaurant.rating = "Absolutely love it! Must try."
+            case "good": restaurant.rating = "Preety good."
+            case "dislike": restaurant.rating = "I don't like it."
+            default: break
+            }
+        }
+        tableView.reloadData()
     }
 
         override func viewDidLoad() {
@@ -77,7 +92,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             cell.valueLabel.text = restaurant.location
         case 3:
             cell.fieldLabel.text = "Been here:"
-            cell.valueLabel.text = (restaurant.isVisited) ?"Yes, I've been here before": "No"
+            cell.valueLabel.text = (restaurant.isVisited) ?"Yes, I've been here before. \(restaurant.rating)": "No"
         case 4:
             cell.fieldLabel.text = "Phone:"
             cell.valueLabel.text = restaurant.phone
