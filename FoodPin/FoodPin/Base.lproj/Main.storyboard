@@ -298,6 +298,7 @@
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="4C1-sl-m0Q" id="msb-2x-fXF"/>
+                        <outlet property="closeButton" destination="xni-qM-zfr" id="jgK-2H-1lw"/>
                         <outlet property="containerView" destination="Coo-Qe-2hi" id="A0L-32-CQo"/>
                         <outlet property="restaurantImageView" destination="axj-Uz-Y4t" id="oil-qj-oCE"/>
                     </connections>

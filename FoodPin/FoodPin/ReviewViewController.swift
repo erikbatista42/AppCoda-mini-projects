@@ -15,6 +15,8 @@ class ReviewViewController: UIViewController {
     
     @IBOutlet var restaurantImageView: UIImageView!
     var restaurant:Restaurant?
+    
+    @IBOutlet var closeButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
