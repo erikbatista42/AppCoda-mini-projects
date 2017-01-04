@@ -20,8 +20,11 @@ class ReviewViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+                   //Pass image data through segue
+        if let restaurant = restaurant {
+            restaurantImageView.image = UIImage(named: restaurant.image)
+        }
         
         // Do any additional setup after loading the view.
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
@@ -29,15 +32,18 @@ class ReviewViewController: UIViewController {
         blurEffectView.frame = view.bounds
         backgroundImageView.addSubview(blurEffectView)
 
-        
+        //Do image animation
         let scaleTransform = CGAffineTransform.init(scaleX: 0, y:0)
         let translateTransform = CGAffineTransform.init(translationX: 0, y: -1000)
         let combineTransform = scaleTransform.concatenating(translateTransform)
         containerView.transform = combineTransform
         
-        if let restaurant = restaurant {
-            restaurantImageView.image = UIImage(named: restaurant.image)
-        }
+        //Do X button animation
+//        let secondTransform = CGAffineTransform.init(scaleX: 100, y:0)
+//        let secondTranslateTransform = CGAffineTransform.init(translationX:0, y:0)
+//let secondCombineTransform = secondTransform.concatenating(secondTranslateTransform)
+        closeButton.transform = CGAffineTransform.init(translationX: 1000, y:0)
+       
         
         
     }
@@ -47,12 +53,15 @@ class ReviewViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 2.0, animations: {
             self.containerView.transform = CGAffineTransform.identity
+            self.closeButton.transform = CGAffineTransform.identity
         })
     }
-    
+
+    }
 
     
     
@@ -66,4 +75,4 @@ class ReviewViewController: UIViewController {
     }
     */
 
-}
+
