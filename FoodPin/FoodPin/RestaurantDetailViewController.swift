@@ -67,6 +67,32 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showMap))
             mapView.addGestureRecognizer(tapGestureRecognizer)
             
+            let geoCoder = CLGeocoder()
+            geoCoder.geocodeAddressString(restaurant.location) { placemarks, error in
+                
+                if error != nil {
+                    print("error")
+                return
+                }
+                
+                    if let placemarks = placemarks {
+                    //Get the first placemark
+                    let placemark = placemarks[0]
+                    //Add annotation
+                    let annotation = MKPointAnnotation()
+                    
+                    if let location = placemark.location {
+                        //Display the annotation
+                        annotation.coordinate = location.coordinate
+                        self.mapView.addAnnotation(annotation)
+                        
+                        //set the zoom level
+                        let region = MKCoordinateRegionMakeWithDistance(annotation.coordinate, 250,250)
+                        self.mapView.setRegion(region, animated: false)
+                    }
+                }
+            }
+            
       
     }
 
