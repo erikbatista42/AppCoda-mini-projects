@@ -91,6 +91,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Food Pin" id="ENh-wP-0YH">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="n65-0C-Knt">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="TKI-La-N6g" kind="presentation" identifier="addRestaurant" id="W1t-vp-1Dk"/>
                             </connections>
@@ -397,10 +398,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sOo-aB-CF7">
-                                                    <rect key="frame" x="8" y="33" width="97" height="30"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sOo-aB-CF7">
+                                                    <rect key="frame" x="8" y="46" width="359" height="17"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="97" id="Xi8-cM-YKm"/>
+                                                        <constraint firstAttribute="width" constant="359" id="Xi8-cM-YKm"/>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -422,8 +423,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JPb-Sr-bVt">
-                                                    <rect key="frame" x="8" y="41" width="97" height="30"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JPb-Sr-bVt">
+                                                    <rect key="frame" x="8" y="54" width="359" height="17"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -442,7 +443,7 @@
                                                 <constraint firstItem="d7L-YI-gcK" firstAttribute="leading" secondItem="4GE-Ny-rnj" secondAttribute="leadingMargin" id="0tR-f6-53r"/>
                                                 <constraint firstAttribute="bottom" secondItem="JPb-Sr-bVt" secondAttribute="bottom" id="Eh1-qV-Mfp"/>
                                                 <constraint firstItem="d7L-YI-gcK" firstAttribute="top" secondItem="4GE-Ny-rnj" secondAttribute="top" id="N0Q-Cw-jd6"/>
-                                                <constraint firstItem="d7L-YI-gcK" firstAttribute="trailing" secondItem="JPb-Sr-bVt" secondAttribute="trailing" id="kr0-kJ-2IB"/>
+                                                <constraint firstItem="d7L-YI-gcK" firstAttribute="trailing" secondItem="JPb-Sr-bVt" secondAttribute="trailing" constant="-262" id="kr0-kJ-2IB"/>
                                                 <constraint firstItem="d7L-YI-gcK" firstAttribute="leading" secondItem="JPb-Sr-bVt" secondAttribute="leading" id="vYb-sZ-S3B"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -503,7 +504,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="New Restaurant" id="L6J-cJ-LbH">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ON5-ZI-gy2">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="hzF-jQ-btq" kind="unwind" unwindAction="unWindToHomeScreenWithSegue:" id="cmh-bp-YJr"/>
                             </connections>
@@ -513,7 +514,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8k-vq-vhF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="hzF-jQ-btq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2638" y="43"/>
+            <point key="canvasLocation" x="2637.5999999999999" y="42.728635682158924"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="j21-UR-CUj">
