@@ -89,7 +89,13 @@
                             <outlet property="delegate" destination="Mnz-OC-Src" id="54S-3T-3u8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Food Pin" id="ENh-wP-0YH"/>
+                    <navigationItem key="navigationItem" title="Food Pin" id="ENh-wP-0YH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="n65-0C-Knt">
+                            <connections>
+                                <segue destination="TKI-La-N6g" kind="presentation" identifier="addRestaurant" id="W1t-vp-1Dk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9w0-Q1-OmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -314,7 +320,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="opT-2e-Fm5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="yCO-ZM-4OZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1839" y="43"/>
+            <point key="canvasLocation" x="1098" y="-625"/>
         </scene>
         <!--New Restaurant-->
         <scene sceneID="HHo-Uu-D5h">
@@ -495,11 +501,19 @@
                             <outlet property="delegate" destination="g5a-KD-XfY" id="XQD-lg-Exq"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="New Restaurant" id="L6J-cJ-LbH"/>
+                    <navigationItem key="navigationItem" title="New Restaurant" id="L6J-cJ-LbH">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ON5-ZI-gy2">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="hzF-jQ-btq" kind="unwind" unwindAction="unWindToHomeScreenWithSegue:" id="cmh-bp-YJr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8k-vq-vhF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="hzF-jQ-btq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3484" y="42.728635682158924"/>
+            <point key="canvasLocation" x="2638" y="43"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="j21-UR-CUj">
@@ -568,7 +582,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ctf-Av-YXy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2544.8000000000002" y="42.728635682158924"/>
+            <point key="canvasLocation" x="1935" y="43"/>
         </scene>
     </scenes>
     <resources>
