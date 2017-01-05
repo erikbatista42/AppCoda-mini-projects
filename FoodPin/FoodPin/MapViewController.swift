@@ -18,6 +18,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+            //show compass, scale & traffic
+            mapView.showsCompass = true
+            mapView.showsScale = true
+            mapView.showsTraffic = true
+        
         // Convert address to coordinate and annotate it on map
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(restaurant.location, completionHandler: { placemarks, error in
@@ -46,6 +52,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             
         })
         mapView.delegate = self
+        //Change pin tint color
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,6 +61,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
+        
         let identifier = "MyPin"
         
         if annotation.isKind(of: MKUserLocation.self) {
@@ -61,6 +69,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
         //Reuse the annotation if possible 
          var annotationView:MKPinAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+        
+
         
         if annotationView == nil {
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
@@ -71,9 +81,17 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         leftIconView.image = UIImage(named: restaurant.image)
         annotationView?.leftCalloutAccessoryView = leftIconView
         
+         annotationView?.pinTintColor = UIColor.blue
+        
         return annotationView
+        //change pin tint color
+        
+       
+
         
     }
+
+
 
     /*
     // MARK: - Navigation
