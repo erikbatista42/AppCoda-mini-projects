@@ -346,8 +346,8 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="kdU-Qa-yQa" firstAttribute="centerY" secondItem="cmv-bf-Omd" secondAttribute="centerY" id="02s-g2-rMU"/>
-                                                <constraint firstItem="kdU-Qa-yQa" firstAttribute="centerX" secondItem="cmv-bf-Omd" secondAttribute="centerX" id="tks-Mg-5X0"/>
+                                                <constraint firstItem="kdU-Qa-yQa" firstAttribute="centerY" secondItem="cmv-bf-Omd" secondAttribute="centerY" id="3W4-Es-Tcm"/>
+                                                <constraint firstItem="kdU-Qa-yQa" firstAttribute="centerX" secondItem="cmv-bf-Omd" secondAttribute="centerX" id="gBz-OY-382"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
