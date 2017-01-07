@@ -13,27 +13,25 @@ class AddRestaurantControllerTableViewController: UITableViewController, UIImage
     @IBOutlet var photoImageView: UIImageView!
     
     @IBOutlet var nameTextField:UITextField!
-    
     @IBOutlet var typeTextField:UITextField!
-    
     @IBOutlet var locationTextField:UITextField!
-    
     @IBOutlet var yesButton:UIButton!
-    
     @IBOutlet var noButton:UIButton!
+    
+        var isVisited = true
     
     @IBAction func saveButton(_ sender: Any) {
             //if field(s) is blank print alert controller
         if nameTextField.text == "" || typeTextField.text == "" || locationTextField.text == "" {
-                //make the alert controller
+                //making of the alert controller
             let alertController = UIAlertController(title: "Oops", message: "We can't proceed because one of the fields is blank. Please note that all fields are required", preferredStyle: UIAlertControllerStyle.alert)
             
             alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             present(alertController, animated: true, completion: nil)
-            print("Fill in all fields")
+            print("Alert Message: Fill in all fields")
             
         } else {
-            //else dismiss view controller
+            //else dismiss view controller & print the text you just typed to the console
             dismiss(animated: true, completion: nil)
             
             print("Name: Optional(\(nameTextField.text))")
@@ -42,8 +40,28 @@ class AddRestaurantControllerTableViewController: UITableViewController, UIImage
             print("Have you been here?:")
         }
     }
-    
 
+    @IBAction func toggleBeenHereButton(sender: UIButton) {
+        // Yes button clicked
+        if sender == yesButton {
+            isVisited = true
+            
+            // Change the backgroundColor property of yesButton to blue
+            yesButton.backgroundColor = UIColor(red: 59.0/255.0, green: 89.0/255.0, blue: 152.0/255.0, alpha: 1.0)
+
+            // Change the backgroundColor property of noButton to light grey
+            noButton.backgroundColor = UIColor.lightGray
+        } else if sender == noButton {
+            isVisited = false
+            
+            // Change the backgroundColor property of yesButton to light gray
+            yesButton.backgroundColor = UIColor.lightGray
+            // Change the backgroundColor property of noButton to red
+            noButton.backgroundColor = UIColor(red: 59.0/255.0, green: 89.0/255.0, blue: 152.0/255.0, alpha: 1.0)
+
+        }
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
