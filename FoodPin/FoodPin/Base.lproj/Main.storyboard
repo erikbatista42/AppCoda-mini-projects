@@ -509,9 +509,20 @@
                                 <segue destination="hzF-jQ-btq" kind="unwind" unwindAction="unWindToHomeScreenWithSegue:" id="cmh-bp-YJr"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="cct-iX-hXt">
+                            <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="saveButton:" destination="g5a-KD-XfY" id="BuE-6t-5Wc"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="locationTextField" destination="JPb-Sr-bVt" id="1g3-5k-f8L"/>
+                        <outlet property="nameTextField" destination="W7A-8D-rvf" id="eVF-kP-Y9V"/>
+                        <outlet property="noButton" destination="lKk-Se-0ek" id="GdE-L1-CiD"/>
                         <outlet property="photoImageView" destination="kdU-Qa-yQa" id="PN9-3C-Y4d"/>
+                        <outlet property="typeTextField" destination="sOo-aB-CF7" id="BMC-f9-2nH"/>
+                        <outlet property="yesButton" destination="80K-Fw-TFY" id="M4n-yk-pUY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8k-vq-vhF" userLabel="First Responder" sceneMemberID="firstResponder"/>

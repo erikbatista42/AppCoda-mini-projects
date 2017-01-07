@@ -12,6 +12,37 @@ class AddRestaurantControllerTableViewController: UITableViewController, UIImage
     
     @IBOutlet var photoImageView: UIImageView!
     
+    @IBOutlet var nameTextField:UITextField!
+    
+    @IBOutlet var typeTextField:UITextField!
+    
+    @IBOutlet var locationTextField:UITextField!
+    
+    @IBOutlet var yesButton:UIButton!
+    
+    @IBOutlet var noButton:UIButton!
+    
+    @IBAction func saveButton(_ sender: Any) {
+            //if field(s) is blank print alert controller
+        if nameTextField.text == "" || typeTextField.text == "" || locationTextField.text == "" {
+                //make the alert controller
+            let alertController = UIAlertController(title: "Oops", message: "We can't proceed because one of the fields is blank. Please note that all fields are required", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            present(alertController, animated: true, completion: nil)
+            print("Fill in all fields")
+            
+        } else {
+            //else dismiss view controller
+            dismiss(animated: true, completion: nil)
+            
+            print("Name: Optional(\(nameTextField.text))")
+            print("Type: Optional(\(typeTextField.text))")
+            print("Location: Optional(\(locationTextField.text))")
+            print("Have you been here?:")
+        }
+    }
+    
 
 
     override func viewDidLoad() {
@@ -28,6 +59,7 @@ class AddRestaurantControllerTableViewController: UITableViewController, UIImage
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         if let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
@@ -62,6 +94,11 @@ class AddRestaurantControllerTableViewController: UITableViewController, UIImage
                 present(imagePicker,animated: true, completion: nil)
                 
                 imagePicker.delegate = self
+            }
+            if nameTextField.text == "" {
+                print("Item is working")
+            } else {
+                print("brrr")
             }
         }
     }
