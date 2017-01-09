@@ -14,7 +14,7 @@ class ReviewViewController: UIViewController {
     @IBOutlet var containerView: UIView!
     
     @IBOutlet var restaurantImageView: UIImageView!
-    var restaurant:Restaurant?
+    var restaurant:RestaurantMO?
     
     @IBOutlet var closeButton: UIButton!
 
@@ -23,7 +23,7 @@ class ReviewViewController: UIViewController {
         
                    //Pass image data through segue
         if let restaurant = restaurant {
-            restaurantImageView.image = UIImage(named: restaurant.image)
+            restaurantImageView.image = UIImage(data: restaurant.image as! Data)
         }
         
         // Do any additional setup after loading the view.

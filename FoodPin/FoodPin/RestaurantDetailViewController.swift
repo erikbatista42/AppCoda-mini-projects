@@ -12,7 +12,7 @@ import MapKit
 class RestaurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var restaurantImageView:UIImageView!
-   var restaurant:Restaurant!
+   var restaurant:RestaurantMO!
     
     @IBOutlet weak var restaurantNameLabel: UILabel!
         var restaurantName = Restaurant!.self
@@ -54,7 +54,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             super.viewDidLoad()
         
             // Do any additional setup after loading the view.
-            restaurantImageView.image = UIImage(named: restaurant.image)
+            restaurantImageView.image = UIImage(data: restaurant.image as! Data)
             
             tableView.separatorColor = UIColor.white
             
@@ -68,7 +68,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             mapView.addGestureRecognizer(tapGestureRecognizer)
             
             let geoCoder = CLGeocoder()
-            geoCoder.geocodeAddressString(restaurant.location) { placemarks, error in
+            geoCoder.geocodeAddressString(restaurant.location!, completionHandler: { placemarks, error in
                 
                 if error != nil {
                     print("error")
@@ -91,10 +91,10 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
                         self.mapView.setRegion(region, animated: false)
                     }
                 }
-            }
-            
-      
+            })
+    
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
