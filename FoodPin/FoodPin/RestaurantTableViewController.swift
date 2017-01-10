@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 
 class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+    
+    var searchController: UISearchController!
     var restaurants:[RestaurantMO] = []
     //An instance variable for the fetched results controller:
     var fetchResultsController: NSFetchedResultsController<RestaurantMO>!
@@ -123,6 +125,9 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
                 print(error)
             }
         }
+        
+        searchController = UISearchController(searchResultsController: nil)
+        tableView.tableHeaderView = searchController.searchBar
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
