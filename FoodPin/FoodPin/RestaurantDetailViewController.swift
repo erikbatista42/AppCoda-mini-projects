@@ -112,7 +112,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         //configure the cell
         switch indexPath.row {
         case 0:
-            cell.fieldLabel.text = "name"
+            cell.fieldLabel.text = "Name"
             cell.valueLabel.text = restaurant.name
         case 1:
             cell.fieldLabel.text = "Type:"

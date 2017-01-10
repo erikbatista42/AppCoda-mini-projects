@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
-    
+    var restaurants:[RestaurantMO] = []
     //An instance variable for the fetched results controller:
     var fetchResultsController: NSFetchedResultsController<RestaurantMO>!
     
@@ -24,7 +24,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     }
     
     
-    var restaurants:[RestaurantMO] = []
+    
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
@@ -104,15 +104,14 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        //Fetch data from data store
+        // Fetch data from data store
         let fetchRequest: NSFetchRequest<RestaurantMO> = RestaurantMO.fetchRequest()
-        let sortDiscriptor = NSSortDescriptor(key: "named", ascending: true)
-        fetchRequest.sortDescriptors = [sortDiscriptor]
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
         
-        if let AppDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-            let context = AppDelegate.persistentContainer.viewContext
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            let context = appDelegate.persistentContainer.viewContext
             fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-            
             fetchResultsController.delegate = self
             
             do {
@@ -121,11 +120,10 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
                     restaurants = fetchedObjects
                 }
             } catch {
-                print("error")
+                print(error)
             }
         }
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -151,6 +149,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }
+    
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         
         switch type {
@@ -178,7 +177,6 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
     }
-    
                     //Action Menu
 //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        //create an option menu as an action sheet

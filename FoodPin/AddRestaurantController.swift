@@ -7,18 +7,22 @@
 //
 
 import UIKit
+import CoreData
 
 class AddRestaurantControllerTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var restaurant: RestaurantMO!
     
+    
     @IBOutlet var photoImageView: UIImageView!
     
+    @IBOutlet var phoneTextField:UITextField!
     @IBOutlet var nameTextField:UITextField!
     @IBOutlet var typeTextField:UITextField!
     @IBOutlet var locationTextField:UITextField!
     @IBOutlet var yesButton:UIButton!
     @IBOutlet var noButton:UIButton!
+    
     
         var isVisited = true
     
@@ -32,17 +36,35 @@ class AddRestaurantControllerTableViewController: UITableViewController, UIImage
             present(alertController, animated: true, completion: nil)
             print("Alert Message: Fill in all fields")
             
-        } else {
-            //else dismiss view controller & print the text you just typed to the console
-            dismiss(animated: true, completion: nil)
+        }
+        print("Name: \(nameTextField.text)")
+        print("Type: \(typeTextField.text)")
+        print("Location: \(locationTextField.text)")
+        print("Phone: \(phoneTextField.text)")
+        print("Have you been here: \(isVisited)")
+        
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            restaurant = RestaurantMO(context: appDelegate.persistentContainer.viewContext)
+            restaurant.name = nameTextField.text
+            restaurant.type = typeTextField.text
+            restaurant.location = locationTextField.text
+            restaurant.isVisited = isVisited
+            restaurant.phone = phoneTextField.text
             
-            print("Name: (\(nameTextField.text))")
-            print("Type: (\(typeTextField.text))")
-            print("Location: (\(locationTextField.text))")
-            print("Have you been here?: \(isVisited)")
+            if let restaurantImage = photoImageView.image {
+                if let imageData = UIImagePNGRepresentation(restaurantImage) {
+                    restaurant.image = NSData(data: imageData)
+                }
+            }
+            
+            print("Saving data to context ...")
+            appDelegate.saveContext()
             
         }
+        dismiss(animated: true, completion: nil)
     }
+
+
 
     @IBAction func toggleBeenHereButton(sender: UIButton) {
         // Yes button clicked

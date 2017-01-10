@@ -15,6 +15,7 @@ class ReviewViewController: UIViewController {
     
     @IBOutlet var restaurantImageView: UIImageView!
     var restaurant:RestaurantMO?
+
     
     @IBOutlet var closeButton: UIButton!
 
