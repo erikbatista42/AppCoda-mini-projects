@@ -9,9 +9,11 @@
 import UIKit
 import CoreData
 
-class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
-    
+class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating {
+        //Search Controller
+    var searchResults:[RestaurantMO] = []
     var searchController: UISearchController!
+        //Restaurants data
     var restaurants:[RestaurantMO] = []
     //An instance variable for the fetched results controller:
     var fetchResultsController: NSFetchedResultsController<RestaurantMO>!
@@ -71,7 +73,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         if segue.identifier == "showRestaurantDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! RestaurantDetailViewController
-                destinationController.restaurant = restaurants[indexPath.row]
+                destinationController.restaurant = (searchController.isActive) ? searchResults[indexPath.row] : restaurants[indexPath.row]
             }
         }
     }
@@ -79,6 +81,8 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -128,7 +132,15 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         
         searchController = UISearchController(searchResultsController: nil)
         tableView.tableHeaderView = searchController.searchBar
+        
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = true
+        
+        searchController.searchBar.placeholder = "Search restaurants..."
+        searchController.searchBar.tintColor = UIColor.white
+        searchController.searchBar.barTintColor = UIColor(red: 30.0/255.0, green: 139.0/255.0, blue: 195.0/255.0, alpha: 0.8)
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -239,34 +251,24 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
-        
-        
         let cellIdentifier = "Cell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RestaurantTableViewCell
         
+        // Determine if we get the restaurant from search result or the original array
+        let restaurant = (searchController.isActive) ? searchResults[indexPath.row] : restaurants[indexPath.row]
+        
         // Configure the cell...
-        cell.nameLabel.text = restaurants[indexPath.row].name
-        cell.thumbnailImageView.image = UIImage(data: restaurants[indexPath.row].image as! Data)
-        cell.locationLabel.text = restaurants[indexPath.row].location
-        cell.typeLabel.text = restaurants[indexPath.row].type
-//        cell.imageView?.layer.cornerRadius = (cell.imageView?.frame.size.width)! / 2;
-//        cell.imageView?.clipsToBounds = true
+        cell.nameLabel.text = restaurant.name
+        cell.thumbnailImageView.image = UIImage(data: restaurant.image as! Data)
+        cell.locationLabel.text = restaurant.location
+        cell.typeLabel.text = restaurant.type
         
-        cell.accessoryType = restaurants[indexPath.row].isVisited ? .checkmark : .none
-        cell.backgroundColor = UIColor.clear
+        cell.accessoryType = restaurant.isVisited ? .checkmark : .none
         
-                        //Checkmark-in
-//        if editingStyle == .delete {
-//            // Delete the row from the data source
-//            restaurants.remove(at: indexPath.row)
-//        }
-//        
-//        tableView.deleteRows(at: [indexPath], with: .fade)
-     return cell
-  }
-//    
-    
+        cell.backgroundColor = UIColor(red: 22.0/255.0, green: 37.0/255.0, blue: 48.0/255.0, alpha: 0.2)
+        
+        return cell
+    }
     
     
     
@@ -279,9 +281,29 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restaurants.count
+        if searchController.isActive {
+            return searchResults.count
+        } else {
+            return restaurants.count
+        }
+    }
+    func filterContent(for searchText: String) {
+        searchResults = restaurants.filter({ (restaurant) -> Bool in
+            if let name = restaurant.name {
+                let isMatch = name.localizedCaseInsensitiveContains(searchText)
+                return isMatch
+            }
+            
+            return false
+        })
     }
     
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+            filterContent(for: searchText)
+            tableView.reloadData()
+        }
+    }
    
     
     /*
@@ -294,13 +316,16 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     }
     */
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
+        if searchController.isActive {
+            return false
+        } else {
+            return true
+        }    }
+    
 
     /*
     // Override to support editing the table view.
@@ -332,11 +357,6 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+ 
+*/
 }
