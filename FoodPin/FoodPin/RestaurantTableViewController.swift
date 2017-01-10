@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
-class RestaurantTableViewController: UITableViewController {
+class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+    
+    //An instance variable for the fetched results controller:
+    var fetchResultsController: NSFetchedResultsController<RestaurantMO>!
     
     
     var restaurantIsNotVisited = Array(repeating: false, count: 21)
@@ -99,6 +103,27 @@ class RestaurantTableViewController: UITableViewController {
         
         tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        //Fetch data from data store
+        let fetchRequest: NSFetchRequest<RestaurantMO> = RestaurantMO.fetchRequest()
+        let sortDiscriptor = NSSortDescriptor(key: "named", ascending: true)
+        fetchRequest.sortDescriptors = [sortDiscriptor]
+        
+        if let AppDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            let context = AppDelegate.persistentContainer.viewContext
+            fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            
+            fetchResultsController.delegate = self
+            
+            do {
+                try fetchResultsController.performFetch()
+                if let fetchedObjects = fetchResultsController.fetchedObjects {
+                    restaurants = fetchedObjects
+                }
+            } catch {
+                print("error")
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -112,6 +137,46 @@ class RestaurantTableViewController: UITableViewController {
         
         navigationController?.hidesBarsOnSwipe = true
         
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            let request: NSFetchRequest<RestaurantMO> = RestaurantMO.fetchRequest()
+            let context = appDelegate.persistentContainer.viewContext
+            do {
+                restaurants = try context.fetch(request)
+            } catch {
+                print(error)
+            }
+        }
+        
+    }
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        
+        switch type {
+        case .insert:
+            if let newIndexPath = newIndexPath {
+                tableView.insertRows(at: [newIndexPath], with: .fade)
+            }
+        case .delete:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        case .update:
+            if let indexPath = indexPath {
+                tableView.reloadRows(at: [indexPath], with: .fade)
+            }
+        default:
+            tableView.reloadData()
+        }
+        
+        if let fetchedObjects = controller.fetchedObjects {
+            restaurants = fetchedObjects as! [RestaurantMO]
+        }
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
     }
     
                     //Action Menu

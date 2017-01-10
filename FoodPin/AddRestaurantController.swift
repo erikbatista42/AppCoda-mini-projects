@@ -10,6 +10,8 @@ import UIKit
 
 class AddRestaurantControllerTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    var restaurant: RestaurantMO!
+    
     @IBOutlet var photoImageView: UIImageView!
     
     @IBOutlet var nameTextField:UITextField!
@@ -22,7 +24,7 @@ class AddRestaurantControllerTableViewController: UITableViewController, UIImage
     
     @IBAction func saveButton(_ sender: Any) {
             //if field(s) is blank print alert controller
-        if nameTextField.text == "" || typeTextField.text == "" || locationTextField.text == "" {
+        if nameTextField.text == "" || typeTextField.text == "" ||  locationTextField.text == "" {
                 //making of the alert controller
             let alertController = UIAlertController(title: "Oops", message: "We can't proceed because one of the fields is blank. Please note that all fields are required", preferredStyle: UIAlertControllerStyle.alert)
             
@@ -34,10 +36,11 @@ class AddRestaurantControllerTableViewController: UITableViewController, UIImage
             //else dismiss view controller & print the text you just typed to the console
             dismiss(animated: true, completion: nil)
             
-            print("Name: Optional(\(nameTextField.text))")
-            print("Type: Optional(\(typeTextField.text))")
-            print("Location: Optional(\(locationTextField.text))")
-            print("Have you been here?:")
+            print("Name: (\(nameTextField.text))")
+            print("Type: (\(typeTextField.text))")
+            print("Location: (\(locationTextField.text))")
+            print("Have you been here?: \(isVisited)")
+            
         }
     }
 
