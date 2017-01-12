@@ -141,6 +141,11 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         searchController.searchBar.barTintColor = UIColor(red: 30.0/255.0, green: 139.0/255.0, blue: 195.0/255.0, alpha: 0.8)
     }
     override func viewDidAppear(_ animated: Bool) {
+        
+        if UserDefaults.standard.bool(forKey: "hasViewedWalkthrough") {
+            return
+        }
+        
         if let pageViewController = storyboard?.instantiateViewController(withIdentifier: "WalkthroughController") as? WalkthroughPageViewController {
             
             present(pageViewController, animated: true, completion: nil)
