@@ -35,15 +35,17 @@ class WalkthroughPageViewController: UIPageViewController, UIPageViewControllerD
         
     }
     
-    func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return pageHeadings.count
-    }
-    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        if let pageContentViewController = storyboard?.instantiateViewController(withIdentifier: "WalkthroughContentViewController") as? WalkthroughContentViewController {
-            return pageContentViewController.index
-        }
-        return 0
-    }
+    
+    //Uncoment bellow to have the default page control
+//    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+//        return pageHeadings.count
+//    }
+//    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+//        if let pageContentViewController = storyboard?.instantiateViewController(withIdentifier: "WalkthroughContentViewController") as? WalkthroughContentViewController {
+//            return pageContentViewController.index
+//        }
+//        return 0
+//    }
     
 func contentViewController(at index: Int) -> WalkthroughContentViewController? {
     

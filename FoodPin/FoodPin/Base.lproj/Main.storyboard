@@ -615,11 +615,16 @@
                                     <constraint firstAttribute="width" secondItem="XeB-I7-Dpq" secondAttribute="height" multiplier="75:58" constant="-151" id="Ppi-Pv-7kH"/>
                                 </constraints>
                             </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ikb-gT-PgQ">
+                                <rect key="frame" x="168" y="622" width="39" height="37"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" red="0.12156862745098039" green="0.22745098039215686" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="HJd-ns-2Hd" firstAttribute="top" secondItem="ikb-gT-PgQ" secondAttribute="bottom" constant="8" id="4MY-Gu-Vc3"/>
                             <constraint firstAttribute="trailing" secondItem="XeB-I7-Dpq" secondAttribute="trailing" constant="113" id="D4e-OV-hAW"/>
                             <constraint firstItem="tqJ-nt-i4P" firstAttribute="centerX" secondItem="Egi-X6-kXU" secondAttribute="centerX" id="DXf-GV-2RN"/>
+                            <constraint firstItem="ikb-gT-PgQ" firstAttribute="centerX" secondItem="Egi-X6-kXU" secondAttribute="centerX" id="NzA-E8-Ut5"/>
                             <constraint firstItem="XeB-I7-Dpq" firstAttribute="top" secondItem="tqJ-nt-i4P" secondAttribute="bottom" constant="8" id="Zb7-YL-0zl"/>
                             <constraint firstItem="tqJ-nt-i4P" firstAttribute="top" secondItem="uxO-CR-mVk" secondAttribute="bottom" constant="39" id="ZnI-9m-hYg"/>
                             <constraint firstItem="eju-dF-ZPG" firstAttribute="centerX" secondItem="Egi-X6-kXU" secondAttribute="centerX" id="gHZ-Qs-9Kv"/>
