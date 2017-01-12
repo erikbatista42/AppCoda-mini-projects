@@ -689,11 +689,11 @@
             </objects>
             <point key="canvasLocation" x="324" y="743"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Discover-->
         <scene sceneID="zxB-wI-5CJ">
             <objects>
                 <navigationController id="XRN-u9-bku" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="recents" id="g36-UK-dEo"/>
+                    <tabBarItem key="tabBarItem" title="Discover" image="discover" selectedImage="discover" id="g36-UK-dEo"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xz2-Cj-YN2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -735,11 +735,11 @@
             </objects>
             <point key="canvasLocation" x="324" y="1433"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--About-->
         <scene sceneID="wVb-FQ-Y00">
             <objects>
                 <navigationController id="ZTr-we-7uo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="more" id="bhR-Jb-paN"/>
+                    <tabBarItem key="tabBarItem" title="About" image="about" selectedImage="about" id="bhR-Jb-paN"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uoT-uS-0mj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -784,11 +784,11 @@
             </objects>
             <point key="canvasLocation" x="1263" y="743"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Favorites-->
         <scene sceneID="04X-aS-8Ds">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="3ry-w8-TOp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="wZb-lN-PkU"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="favorite" selectedImage="favorite" id="wZb-lN-PkU"/>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HO3-z1-llD">
@@ -843,10 +843,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="about" width="23" height="22"/>
         <image name="barrafina" width="480" height="480"/>
         <image name="cafeloisl" width="480" height="480"/>
         <image name="check" width="28" height="28"/>
         <image name="cross" width="24" height="24"/>
+        <image name="discover" width="25" height="19"/>
+        <image name="favorite" width="17" height="25"/>
         <image name="photoalbum" width="64" height="64"/>
     </resources>
 </document>

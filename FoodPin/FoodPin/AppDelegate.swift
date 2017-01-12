@@ -22,6 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        UIApplication.shared.statusBarStyle = .lightContent
           UIApplication.shared.statusBarStyle = .lightContent
         
+        UITabBar.appearance().tintColor = UIColor.white
+        UITabBar.appearance().barTintColor = UIColor(red: 30.0/255.0, green: 139.0/255.0, blue: 195.0/255.0, alpha: 0.8)
+        UITabBar.appearance().backgroundImage = UIImage(named: "tabbar-background")
+
+        
         return true
     }
     // MARK: - Core Data stack
@@ -68,8 +73,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-    //Change tab bar colors
     
+
     
 
     func applicationWillResignActive(_ application: UIApplication) {
