@@ -609,12 +609,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XeB-I7-Dpq">
-                                <rect key="frame" x="113" y="123" width="149" height="232"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="XeB-I7-Dpq" secondAttribute="height" multiplier="75:58" constant="-151" id="Ppi-Pv-7kH"/>
-                                </constraints>
-                            </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ikb-gT-PgQ">
                                 <rect key="frame" x="168" y="622" width="39" height="37"/>
                             </pageControl>
@@ -632,11 +626,17 @@
                                     <action selector="nextButtonTappedWithSender:" destination="3BY-MF-L7w" eventType="touchUpInside" id="Umd-QQ-Ttn"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XeB-I7-Dpq">
+                                <rect key="frame" x="84" y="123" width="206" height="232"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XeB-I7-Dpq" secondAttribute="height" multiplier="75:58" constant="-94" id="Ppi-Pv-7kH"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.12156862745098039" green="0.22745098039215686" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="HJd-ns-2Hd" firstAttribute="top" secondItem="ikb-gT-PgQ" secondAttribute="bottom" constant="8" id="4MY-Gu-Vc3"/>
-                            <constraint firstAttribute="trailing" secondItem="XeB-I7-Dpq" secondAttribute="trailing" constant="113" id="D4e-OV-hAW"/>
+                            <constraint firstAttribute="trailing" secondItem="XeB-I7-Dpq" secondAttribute="trailing" constant="85" id="D4e-OV-hAW"/>
                             <constraint firstItem="tqJ-nt-i4P" firstAttribute="centerX" secondItem="Egi-X6-kXU" secondAttribute="centerX" id="DXf-GV-2RN"/>
                             <constraint firstItem="ikb-gT-PgQ" firstAttribute="centerX" secondItem="Egi-X6-kXU" secondAttribute="centerX" id="NzA-E8-Ut5"/>
                             <constraint firstItem="HJd-ns-2Hd" firstAttribute="top" secondItem="2b5-u3-nvU" secondAttribute="bottom" constant="8" id="Yz7-q7-F7X"/>
@@ -644,7 +644,7 @@
                             <constraint firstItem="tqJ-nt-i4P" firstAttribute="top" secondItem="uxO-CR-mVk" secondAttribute="bottom" constant="39" id="ZnI-9m-hYg"/>
                             <constraint firstItem="eju-dF-ZPG" firstAttribute="centerX" secondItem="Egi-X6-kXU" secondAttribute="centerX" id="gHZ-Qs-9Kv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2b5-u3-nvU" secondAttribute="trailing" constant="7" id="kuz-On-7qg"/>
-                            <constraint firstItem="XeB-I7-Dpq" firstAttribute="leading" secondItem="Egi-X6-kXU" secondAttribute="leading" constant="113" id="tCV-Ur-yhI"/>
+                            <constraint firstItem="XeB-I7-Dpq" firstAttribute="leading" secondItem="Egi-X6-kXU" secondAttribute="leading" constant="84" id="tCV-Ur-yhI"/>
                             <constraint firstItem="eju-dF-ZPG" firstAttribute="top" secondItem="XeB-I7-Dpq" secondAttribute="bottom" constant="15" id="xIL-t3-Cav"/>
                         </constraints>
                     </view>
