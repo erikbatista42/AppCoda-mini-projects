@@ -636,6 +636,7 @@
                         <outlet property="contentImageView" destination="XeB-I7-Dpq" id="rMF-kj-dCY"/>
                         <outlet property="contentLabel" destination="eju-dF-ZPG" id="Q1Y-gk-rVT"/>
                         <outlet property="headingLabel" destination="tqJ-nt-i4P" id="Pg5-NL-Mcv"/>
+                        <outlet property="pageControl" destination="ikb-gT-PgQ" id="83x-Uo-GF7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tym-kK-OrR" userLabel="First Responder" sceneMemberID="firstResponder"/>

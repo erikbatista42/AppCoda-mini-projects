@@ -13,6 +13,7 @@ class WalkthroughContentViewController: UIViewController {
     @IBOutlet var headingLabel:UILabel!
     @IBOutlet var contentLabel:UILabel!
     @IBOutlet var contentImageView:UIImageView!
+    @IBOutlet var pageControl: UIPageControl!
     
     var index = 0
     var heading = ""
@@ -25,6 +26,7 @@ class WalkthroughContentViewController: UIViewController {
         headingLabel.text = heading
         contentLabel.text = content
         contentImageView.image = UIImage(named: imageFile)
+        pageControl.currentPage = index
     }
     
     
