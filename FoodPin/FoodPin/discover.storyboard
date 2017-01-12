@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XRN-u9-bku">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Discover-->
+        <scene sceneID="zxB-wI-5CJ">
+            <objects>
+                <navigationController id="XRN-u9-bku" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Discover" image="discover" selectedImage="discover" id="g36-UK-dEo"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4_7.fullscreen"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xz2-Cj-YN2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="lfi-bY-OQ7" kind="relationship" relationship="rootViewController" id="cM6-kl-kGn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Do-s6-cwB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-615" y="743"/>
+        </scene>
+        <!--UITableViewController-q9A-um-CVb-->
+        <scene sceneID="2qk-EV-pQW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="UITableViewController-q9A-um-CVb" id="lfi-bY-OQ7" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BO4-h4-WlN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="324" y="743"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="discover" width="25" height="19"/>
+    </resources>
+</document>

@@ -23,6 +23,8 @@
 		E7BAD50F1E236282001A4C60 /* FoodPin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7BAD50D1E236282001A4C60 /* FoodPin.xcdatamodeld */; };
 		E7C080D51E2679BE00B5CA4D /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C080D41E2679BE00B5CA4D /* WalkthroughContentViewController.swift */; };
 		E7C080D71E267D9C00B5CA4D /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C080D61E267D9C00B5CA4D /* WalkthroughPageViewController.swift */; };
+		E7C080DA1E27B0AB00B5CA4D /* about.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C080D81E27B0AB00B5CA4D /* about.storyboard */; };
+		E7C080DC1E27B0BD00B5CA4D /* discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C080DB1E27B0BD00B5CA4D /* discover.storyboard */; };
 		E7E495B71E15C4D800F840B5 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E495B61E15C4D800F840B5 /* RestaurantDetailViewController.swift */; };
 		E7E98CA31E17FCC50053039E /* RestaurantDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E98CA21E17FCC50053039E /* RestaurantDetailTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -67,6 +69,8 @@
 		E7BAD50E1E236282001A4C60 /* FoodPin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodPin.xcdatamodel; sourceTree = "<group>"; };
 		E7C080D41E2679BE00B5CA4D /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
 		E7C080D61E267D9C00B5CA4D /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
+		E7C080D91E27B0AB00B5CA4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/about.storyboard; sourceTree = "<group>"; };
+		E7C080DB1E27B0BD00B5CA4D /* discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = discover.storyboard; sourceTree = "<group>"; };
 		E7E495B61E15C4D800F840B5 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		E7E98CA21E17FCC50053039E /* RestaurantDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,6 +138,8 @@
 				E7C080D41E2679BE00B5CA4D /* WalkthroughContentViewController.swift */,
 				E7BAD50D1E236282001A4C60 /* FoodPin.xcdatamodeld */,
 				E74E77EB1E0B851C00F72ADE /* Main.storyboard */,
+				E7C080DB1E27B0BD00B5CA4D /* discover.storyboard */,
+				E7C080D81E27B0AB00B5CA4D /* about.storyboard */,
 				E74E77EE1E0B851C00F72ADE /* Assets.xcassets */,
 				E74E77F01E0B851C00F72ADE /* LaunchScreen.storyboard */,
 				E74E77F31E0B851C00F72ADE /* Info.plist */,
@@ -284,6 +290,8 @@
 			files = (
 				E74E77F21E0B851C00F72ADE /* LaunchScreen.storyboard in Resources */,
 				E74E77EF1E0B851C00F72ADE /* Assets.xcassets in Resources */,
+				E7C080DC1E27B0BD00B5CA4D /* discover.storyboard in Resources */,
+				E7C080DA1E27B0AB00B5CA4D /* about.storyboard in Resources */,
 				E74E77ED1E0B851C00F72ADE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,6 +378,14 @@
 				E74E77F11E0B851C00F72ADE /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E7C080D81E27B0AB00B5CA4D /* about.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7C080D91E27B0AB00B5CA4D /* Base */,
+			);
+			name = about.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
