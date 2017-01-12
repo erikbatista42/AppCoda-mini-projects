@@ -68,6 +68,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    //Change tab bar colors
+    
     
 
     func applicationWillResignActive(_ application: UIApplication) {
