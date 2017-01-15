@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZTr-we-7uo">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,12 +11,13 @@
                 <navigationController id="ZTr-we-7uo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="About" image="about" selectedImage="about" id="bhR-Jb-paN"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4_7.fullscreen"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uoT-uS-0mj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="JTo-ZA-5g8" kind="relationship" relationship="rootViewController" id="lld-Y5-mFg"/>
+                        <segue destination="fZb-mx-kdZ" kind="relationship" relationship="rootViewController" id="lld-Y5-mFg"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="du7-Lq-RGx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -28,10 +25,10 @@
             <point key="canvasLocation" x="-615" y="1433"/>
         </scene>
         <!--UITableViewController-U5r-6V-C07-->
-        <scene sceneID="eC8-PO-1Z7">
+        <scene sceneID="yJz-kB-vUh">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="UITableViewController-U5r-6V-C07" id="JTo-ZA-5g8" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kdz-rq-TE4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="UITableViewController-U5r-6V-C07" id="fZb-mx-kdZ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rKD-Iu-utB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="324" y="1433"/>
         </scene>

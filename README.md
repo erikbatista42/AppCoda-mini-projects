@@ -1,4 +1,4 @@
 # AppCoda-mini-projects
-FoodPin project app!
+mini project to practice auto layout and stack views!
 
-App Coda tuturial: https://www.appcoda.com/swift/
+App Coda tuturials

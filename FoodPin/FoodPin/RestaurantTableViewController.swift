@@ -24,7 +24,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     var restaurantIsVisited = Array(repeating: false, count: 21)
 
     @IBAction func unWindToHomeScreen(segue:UIStoryboardSegue) {
-    
+        
     }
     
     
