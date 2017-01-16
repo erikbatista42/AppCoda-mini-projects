@@ -61,18 +61,22 @@ class AboutTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
+        // Leave us feedback section
         case 0:
             if indexPath.row == 0 {
                 if let url = URL(string: "http://www.apple.com/itunes/charts/paid-apps/") {
                     UIApplication.shared.open(url)
                 }
+            } else if indexPath.row == 1 {
+                performSegue(withIdentifier: "showWebView", sender: self)
             }
+            
         default:
             break
         }
-        tableView.deselectRow(at: indexPath, animated: true)
+        
+        tableView.deselectRow(at: indexPath, animated: false)
     }
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

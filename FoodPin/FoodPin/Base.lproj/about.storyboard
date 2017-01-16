@@ -26,11 +26,11 @@
                                 <rect key="frame" x="0.0" y="222" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wWM-KD-P6P" id="JBg-lI-s9n">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bkL-5M-GPJ">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -46,10 +46,31 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="About" id="fBm-gE-hAt"/>
+                    <connections>
+                        <segue destination="hYl-ld-2LR" kind="show" identifier="showWebView" id="lBQ-8f-ieP"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TwO-U5-Mcl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="334" y="1364"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="pac-lS-cKb">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YZR-9o-Ap5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="hYl-ld-2LR" customClass="WebViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tsH-NJ-Z5A"/>
+                        <viewControllerLayoutGuide type="bottom" id="bFy-NE-Pvo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="waO-Dw-Phc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1044" y="1363"/>
         </scene>
         <!--About-->
         <scene sceneID="HPQ-QN-1vh">
