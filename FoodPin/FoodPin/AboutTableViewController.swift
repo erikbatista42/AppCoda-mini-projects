@@ -76,7 +76,7 @@ class AboutTableViewController: UITableViewController {
         case 1:
             if let url = URL(string: links[indexPath.row]) {
                 let safariController = SFSafariViewController(url: url)
-                present(safariController, animated: true, completion: nil)
+                present(safariController, animated: true, completion: nil)   
             }
             
         default:
