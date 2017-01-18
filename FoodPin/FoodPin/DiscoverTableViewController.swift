@@ -10,6 +10,9 @@ import UIKit
 import CloudKit
 
 class DiscoverTableViewController: UITableViewController {
+    
+    //create a cache object using NSCache
+    var imageCache = NSCache<CKRecordID, NSURL>()
     //Indicator view
     @IBOutlet var spinner: UIActivityIndicatorView!
     
@@ -130,6 +133,8 @@ class DiscoverTableViewController: UITableViewController {
                         if let imageData = try? Data.init(contentsOf: imageAsset.fileURL) {
                             cell.imageView?.image = UIImage(data: imageData)
                         }
+                        //Add the image url to cache
+                        self.imageCache.setObject(imageAsset.fileURL as NSURL, forKey: restaurantRecord.recordID)
                     }
                 }
             }
