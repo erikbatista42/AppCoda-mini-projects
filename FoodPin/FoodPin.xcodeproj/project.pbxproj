@@ -30,6 +30,7 @@
 		E7E495B71E15C4D800F840B5 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E495B61E15C4D800F840B5 /* RestaurantDetailViewController.swift */; };
 		E7E98CA31E17FCC50053039E /* RestaurantDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E98CA21E17FCC50053039E /* RestaurantDetailTableViewCell.swift */; };
 		E7F234941E2D92C800F22FDC /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F234931E2D92C800F22FDC /* CloudKit.framework */; };
+		E7F234961E2DAF0500F22FDC /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F234951E2DAF0500F22FDC /* DiscoverTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		E7E98CA21E17FCC50053039E /* RestaurantDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTableViewCell.swift; sourceTree = "<group>"; };
 		E7F2348E1E2D90D900F22FDC /* FoodPin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodPin.entitlements; sourceTree = "<group>"; };
 		E7F234931E2D92C800F22FDC /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		E7F234951E2DAF0500F22FDC /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				E7D0BEC61E2BE60800536153 /* AboutTableViewController.swift */,
 				E7D0BEC81E2C16A600536153 /* WebViewController.swift */,
 				E7D0BEC41E2BE54F00536153 /* discover.storyboard */,
+				E7F234951E2DAF0500F22FDC /* DiscoverTableViewController.swift */,
 				E7BAD50D1E236282001A4C60 /* FoodPin.xcdatamodeld */,
 				E74E77EE1E0B851C00F72ADE /* Assets.xcassets */,
 				E74E77F01E0B851C00F72ADE /* LaunchScreen.storyboard */,
@@ -348,6 +351,7 @@
 				E7E495B71E15C4D800F840B5 /* RestaurantDetailViewController.swift in Sources */,
 				E7D0BEC91E2C16A600536153 /* WebViewController.swift in Sources */,
 				E74E77E81E0B851C00F72ADE /* AppDelegate.swift in Sources */,
+				E7F234961E2DAF0500F22FDC /* DiscoverTableViewController.swift in Sources */,
 				E78445C41E1E2E4100A4B0BD /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
