@@ -63,6 +63,7 @@ class DiscoverTableViewController: UITableViewController {
             }
             print("Successfully retrieve the data from iCloud")
                 OperationQueue.main.addOperation {
+                    self.spinner.stopAnimating()
                     self.tableView.reloadData()
                 }
                 
