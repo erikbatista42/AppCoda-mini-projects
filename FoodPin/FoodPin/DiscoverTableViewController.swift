@@ -7,11 +7,38 @@
 //
 
 import UIKit
+import CloudKit
 
 class DiscoverTableViewController: UITableViewController {
+    
+    //stores an array of CKRecord objects
+    var restaurants: [CKRecord] = []
+    
+    func fetchRecordsFromCloud() {
+        //Fetch data using Convenience API
+        let cloudContainer = CKContainer.default()
+        let publicDatabase = cloudContainer.publicCloudDatabase
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: "Restaurant", predicate: predicate)
+        publicDatabase.perform(query, inZoneWith: nil) { (results, error) in
+            
+            if error != nil {
+                print("error")
+                return
+            }
+            
+            if let results = results {
+                print("Completed the download of Restaurant data")
+                self.restaurants = results
+                self.tableView.reloadData()
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetchRecordsFromCloud()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
