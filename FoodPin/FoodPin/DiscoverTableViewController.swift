@@ -10,6 +10,8 @@ import UIKit
 import CloudKit
 
 class DiscoverTableViewController: UITableViewController {
+    //Indicator view
+    @IBOutlet var spinner: UIActivityIndicatorView!
     
     //stores an array of CKRecord objects
     var restaurants: [CKRecord] = []
@@ -19,6 +21,13 @@ class DiscoverTableViewController: UITableViewController {
         super.viewDidLoad()
         
         fetchRecordsFromCloud()
+        
+        let spinner:UIActivityIndicatorView = UIActivityIndicatorView()
+        spinner.activityIndicatorViewStyle = .gray
+        spinner.center = view.center
+        spinner.hidesWhenStopped = true
+        view.addSubview(spinner)
+        spinner.startAnimating()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
