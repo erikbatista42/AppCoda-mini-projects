@@ -20,10 +20,22 @@ class DiscoverTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.backgroundColor = UIColor(red: 107.0/255.0, green: 185.0/255.0, blue: 240.0/255.0, alpha: 0.2)
+        
+        
+        //Table view seperator color
+        tableView.separatorColor = UIColor(red: 30.0/255.0, green: 139.0/255.0, blue: 195.0/255.0, alpha: 0.8)
+        
+        //NavigationBar background color, text font, and font size
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 30.0/255.0, green: 139.0/255.0, blue: 195.0/255.0, alpha: 0.8)
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white,NSFontAttributeName: UIFont(name: "AvenirNext-DemiBold", size: 21)!]
+
+        
         fetchRecordsFromCloud()
         
         let spinner:UIActivityIndicatorView = UIActivityIndicatorView()
-        spinner.activityIndicatorViewStyle = .gray
+        spinner.activityIndicatorViewStyle = .whiteLarge
         spinner.center = view.center
         spinner.hidesWhenStopped = true
         view.addSubview(spinner)
@@ -50,7 +62,7 @@ class DiscoverTableViewController: UITableViewController {
         
         //Create the query operation with the query
         let queryOperation = CKQueryOperation(query: query)
-        queryOperation.desiredKeys = ["name", "image"]
+        queryOperation.desiredKeys = ["name"]
         queryOperation.queuePriority = .veryHigh
         queryOperation.resultsLimit = 50
         queryOperation.recordFetchedBlock = { (record) -> Void in
@@ -62,6 +74,7 @@ class DiscoverTableViewController: UITableViewController {
                 return
             }
             print("Successfully retrieve the data from iCloud")
+            
                 OperationQueue.main.addOperation {
                     self.spinner.stopAnimating()
                     self.tableView.reloadData()
@@ -90,19 +103,39 @@ class DiscoverTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
         // Configure the cell...
+        cell.backgroundColor = UIColor(red: 22.0/255.0, green: 37.0/255.0, blue: 48.0/255.0, alpha: 0.2)
+        
         let restaurant = restaurants[indexPath.row]
         cell.textLabel?.text = restaurant.object(forKey: "name") as? String
         
-        if let image = restaurant.object(forKey: "image") {
-            let imageAsset = image as! CKAsset
+        //Set the default image
+        cell.imageView?.image = UIImage(named: "photoalbum")
         
-        if let imageData = try? Data.init(contentsOf: imageAsset.fileURL) {
-            cell.imageView?.image = UIImage(data: imageData)
-            
-            
+        //Fetch image from Cloud in background
+        let publicDatabase = CKContainer.default().publicCloudDatabase
+        let fetchRecordsImageOperation = CKFetchRecordsOperation(recordIDs: [restaurant.recordID])
+        fetchRecordsImageOperation.desiredKeys = ["image"]
+        fetchRecordsImageOperation.queuePriority = .veryHigh
+        
+        fetchRecordsImageOperation.perRecordCompletionBlock = {(record, recordID, error) -> Void in
+            if let error = error {
+                print("Failed to get restaurant image: \(error.localizedDescription)")
+                return
+            }
+            if let restaurantRecord = record {
+                OperationQueue.main.addOperation {
+                    if let image = restaurantRecord.object(forKey: "image") {
+                        let imageAsset = image as! CKAsset
+                        
+                        if let imageData = try? Data.init(contentsOf: imageAsset.fileURL) {
+                            cell.imageView?.image = UIImage(data: imageData)
+                        }
+                    }
+                }
+            }
         }
-            
-        }
+        publicDatabase.add(fetchRecordsImageOperation)
+        
         return cell
     }
     

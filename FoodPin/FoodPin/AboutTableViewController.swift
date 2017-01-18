@@ -18,6 +18,18 @@ class AboutTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.backgroundColor = UIColor(red: 107.0/255.0, green: 185.0/255.0, blue: 240.0/255.0, alpha: 0.2)
+        
+        
+        //Table view seperator color
+        tableView.separatorColor = UIColor(red: 30.0/255.0, green: 139.0/255.0, blue: 195.0/255.0, alpha: 0.8)
+        
+        //NavigationBar background color, text font, and font size
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 30.0/255.0, green: 139.0/255.0, blue: 195.0/255.0, alpha: 0.8)
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white,NSFontAttributeName: UIFont(name: "AvenirNext-DemiBold", size: 21)!]
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -55,7 +67,9 @@ class AboutTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
         // Configure the cell...
+         cell.backgroundColor = UIColor(red: 22.0/255.0, green: 37.0/255.0, blue: 48.0/255.0, alpha: 0.2)
         cell.textLabel?.text = sectionContent[indexPath.section][indexPath.row]
+    
 
         return cell
     }
