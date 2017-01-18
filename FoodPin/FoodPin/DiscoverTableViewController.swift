@@ -14,27 +14,7 @@ class DiscoverTableViewController: UITableViewController {
     //stores an array of CKRecord objects
     var restaurants: [CKRecord] = []
     
-    func fetchRecordsFromCloud() {
-        //Fetch data using Convenience API
-        let cloudContainer = CKContainer.default()
-        let publicDatabase = cloudContainer.publicCloudDatabase
-        let predicate = NSPredicate(value: true)
-        let query = CKQuery(recordType: "Restaurant", predicate: predicate)
-        publicDatabase.perform(query, inZoneWith: nil) { (results, error) in
-            
-            if error != nil {
-                print("error")
-                return
-            }
-            
-            if let results = results {
-                print("Completed the download of Restaurant data")
-                self.restaurants = results
-                self.tableView.reloadData()
-            }
-        }
-    }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,6 +31,33 @@ class DiscoverTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    func fetchRecordsFromCloud() {
+        
+        // Fetch data using Convenience API
+        let cloudContainer = CKContainer.default()
+        let publicDatabase = cloudContainer.publicCloudDatabase
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: "Restaurant", predicate: predicate)
+        publicDatabase.perform(query, inZoneWith: nil, completionHandler: {
+            (results, error) -> Void in
+            
+            if error != nil {
+                print(error)
+                return
+            }
+            
+            if let results = results {
+                print("Completed the download of Restaurant data")
+                self.restaurants = results
+                
+                OperationQueue.main.addOperation {
+                    self.tableView.reloadData()
+                }
+                
+            }
+        })
+    }
+
 
     // MARK: - Table view data source
 
@@ -67,6 +74,7 @@ class DiscoverTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
         // Configure the cell...
@@ -78,7 +86,10 @@ class DiscoverTableViewController: UITableViewController {
         
         if let imageData = try? Data.init(contentsOf: imageAsset.fileURL) {
             cell.imageView?.image = UIImage(data: imageData)
+            
+            
         }
+            
         }
         return cell
     }

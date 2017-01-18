@@ -513,6 +513,7 @@
 				CODE_SIGN_ENTITLEMENTS = FoodPin/FoodPin.entitlements;
 				DEVELOPMENT_TEAM = RL292UUN9S;
 				INFOPLIST_FILE = FoodPin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ed.swiftlang.eu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -527,6 +528,7 @@
 				CODE_SIGN_ENTITLEMENTS = FoodPin/FoodPin.entitlements;
 				DEVELOPMENT_TEAM = RL292UUN9S;
 				INFOPLIST_FILE = FoodPin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ed.swiftlang.eu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
