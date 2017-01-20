@@ -1,4 +1,6 @@
-# AppCoda-mini-projects
-mini project to practice auto layout and stack views!
+# AppCoda-Mini-Projects
+AppCoda beginners book projects!
 
 App Coda tuturials
+
+Main Project: FoodPin
