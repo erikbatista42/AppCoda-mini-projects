@@ -1,6 +1,6 @@
 # AppCoda-Mini-Projects
 AppCoda beginners book projects!
 
-App Coda tuturials
+App Coda Tuturials
 
 Main Project: FoodPin
