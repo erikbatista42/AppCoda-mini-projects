@@ -3,4 +3,4 @@ AppCoda beginners book projects!
 
 App Coda Tuturials
 
-Main Project: FoodPin
+Main Project:  FoodPin
